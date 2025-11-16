@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gik339-h24samka-labb1</title>
+  </head>
+  <!--Reflektion uppgift 1:  Placeringen av <script> taggen påverkar sidans laddningshastighet och vid vilken tidpunkt javascript koden börjar köras.:  
+                I <head> adderas och körs scriptet innan sidan börjar renderas, vilket gör att webbläsaren tillfälligt pausar uppbyggnaden av sidan. Detta kan göra laddningen långsammare, men är användbart för mindre skript som måste köras tidigt. 
+                I <body> så körs scriptet efter att html innehållet har laddats. Detta gör att sidan visas snabbare för användaren.
+                defer fungerar genom att skriptet laddas i bakgrunden medan HTML fortsätter att läsas in, vilket gör att sidan inte blockeras. När hela dokumentet är färdigladdat körs skripten i samma ordning som de står i koden, men bara om de är externa filer src="...". (defer värkar även bara användas i head, för i body har HTML-dokumentet ändå hunnit laddats klart)  -->
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
