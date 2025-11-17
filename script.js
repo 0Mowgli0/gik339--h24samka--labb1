@@ -89,19 +89,20 @@ Jag valde funktionsdeklaration eftersom de är något jag har sett förut och s�
 Dock efter att ha läst på lite om arrowfunktion så kommer jag jobba mer med det i framtiden. 
 
 2. Var man anropa funktionen beror som sagt på vad för typ av funktion man väljer: 
-(funktionsuttryck/arrow) går då inte att anropa innan de definierats, medans med funktionsdeklarationer går det att anopa innan och efter de definerats.
+(funktionsuttryck/arrow) går då inte att anropa innan de definierats, medans med funktionsdeklarationer går det att anopa innan och efter de definerats. 
 
+3. Om du ändrar parametern name inne i funktionen påverkar det bara funktionen och inte den globala variabeln let name = "Jonathan"; . På samma sätt påverkar ändringar av den globala variabeln inte vad funktionen skriver ut. 
+   Lokala parametrar och globala variabler fungerar alltså helt separat.
 
-INTE KLAR HÄR: 
-
-3. Parametern "name" i funktionen gäller bara inuti funktionen. Variabeln "name"
-   utanför funktionen påverkar bara utskrifter utanför. Ändringar på en påverkar inte den andra.
-
-4. Parameter = namnet på värdet som funktionen tar emot. Argument = det värde man skickar in. 
+4. Parameter = Namnet på det värde som en funktion förväntar sig när den definieras. 
+   Argument = Det faktiska värdet som skickas till funktionen när den anropas.
    Variabel = ett namn som lagrar data i koden.
 */
 
 // Extrauppgift (frivillig)
+// obs! När man går live så promtar den från start innan man hinner in i konsolen, vilket gör att man får ett error meddelande "Failed to load resource: the server responded with a status of 404 (Not Found)" i slutet efter allt körts.
+// men om man sparar/uppdaterar så försvinner de.
+
 let tal1 = null;
 let tal2 = null;
 
@@ -114,14 +115,12 @@ while (tal1 === null) {
     continue;
   }
 
-  let num1 = Number(input1);
+  tal1 = Number(input1);
 
   if (isNaN(num1)) {
     alert("Ogiltig input: det måste vara siffror.");
     continue;
   }
-
-  tal1 = num1;
 }
 
 // --- Andra talet ---
@@ -133,17 +132,15 @@ while (tal2 === null) {
     continue;
   }
 
-  let num2 = Number(input2);
+  tal2 = Number(input2);
 
-  if (isNaN(num2)) {
+  if (isNaN(tal2)) {
     alert("Ogiltig input: det måste vara siffror.");
     continue;
   }
-
-  tal2 = num2;
 }
 
-// --- Funktion som utför beräkningar ---
+// Funktion som utför beräkningar
 function calculate(tal1, tal2) {
   let summ = tal1 + tal2;
   let produkt = tal1 * tal2;
@@ -168,8 +165,10 @@ function calculate(tal1, tal2) {
 // Kör funktionen
 let resultat = calculate(tal1, tal2);
 
-// --- Skriv ut till konsolen ---
+//  Skriv ut till konsolen
 console.log(resultat.str);
 console.log("Array:", resultat.array);
 console.log("Objekt:");
 console.table(resultat.obj);
+
+//bugg jag har är att jag inte kan avbryta
