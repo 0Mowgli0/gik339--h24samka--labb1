@@ -117,7 +117,7 @@ while (tal1 === null) {
 
   tal1 = Number(input1);
 
-  if (isNaN(num1)) {
+  if (isNaN(tal1)) {
     alert("Ogiltig input: det måste vara siffror.");
     continue;
   }
