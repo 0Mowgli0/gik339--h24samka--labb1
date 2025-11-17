@@ -100,3 +100,76 @@ INTE KLAR HÄR:
 4. Parameter = namnet på värdet som funktionen tar emot. Argument = det värde man skickar in. 
    Variabel = ett namn som lagrar data i koden.
 */
+
+// Extrauppgift (frivillig)
+let tal1 = null;
+let tal2 = null;
+
+// --- Första talet ---
+while (tal1 === null) {
+  let input1 = prompt("Mata in första talet:");
+
+  if (input1 === null || input1 === "") {
+    alert("Ogiltig input: du måste skriva något.");
+    continue;
+  }
+
+  let num1 = Number(input1);
+
+  if (isNaN(num1)) {
+    alert("Ogiltig input: det måste vara siffror.");
+    continue;
+  }
+
+  tal1 = num1;
+}
+
+// --- Andra talet ---
+while (tal2 === null) {
+  let input2 = prompt("Mata in andra talet:");
+
+  if (input2 === null || input2 === "") {
+    alert("Ogiltig input: du måste skriva något.");
+    continue;
+  }
+
+  let num2 = Number(input2);
+
+  if (isNaN(num2)) {
+    alert("Ogiltig input: det måste vara siffror.");
+    continue;
+  }
+
+  tal2 = num2;
+}
+
+// --- Funktion som utför beräkningar ---
+function calculate(tal1, tal2) {
+  let summ = tal1 + tal2;
+  let produkt = tal1 * tal2;
+  let same = tal1 === tal2;
+
+  // Sträng
+  let str = `Summan är ${summ}, produkten är ${produkt}, och om talet är lika (true) annars (false): ${same}`;
+
+  // Array2
+  let array = [summ, produkt, same];
+
+  //  Objekt
+  let obj = {
+    summ: summ,
+    produkt: produkt,
+    same: same,
+  };
+
+  return { str, array, obj };
+}
+
+// Kör funktionen
+let resultat = calculate(tal1, tal2);
+
+// --- Skriv ut till konsolen ---
+console.log(resultat.str);
+console.log("Array:", resultat.array);
+console.log("Objekt:");
+console.table(resultat.obj);
