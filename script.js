@@ -100,4 +100,3 @@ INTE KLAR HÄR:
 4. Parameter = namnet på värdet som funktionen tar emot. Argument = det värde man skickar in. 
    Variabel = ett namn som lagrar data i koden.
 */
-//
