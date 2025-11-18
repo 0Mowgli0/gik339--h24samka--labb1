@@ -100,15 +100,16 @@ Dock efter att ha läst på lite om arrowfunktion så kommer jag jobba mer med d
 */
 
 // Extrauppgift (frivillig)
-// obs! När man går live så promtar den från start innan man hinner in i konsolen, vilket gör att man får ett error meddelande "Failed to load resource: the server responded with a status of 404 (Not Found)" i slutet efter allt körts.
-// men om man sparar/uppdaterar så försvinner de.
+//OBS! uppdatera gärna 1 gång efter att ha kört igenom, för att få rätt utskrift av array och objekt. Tydligen Vissa konsoler (särskilt Chrome) "tappar" strukturerad visning av objekt som loggats innan konsolen öppnades första gången
 
-let tal1 = null;
-let tal2 = null;
+let tal1;
+let tal2;
+let input1;
+let input2;
 
 // --- Första talet ---
-while (tal1 === null) {
-  let input1 = prompt("Mata in första talet:");
+while (true) {
+  input1 = prompt("Mata in första talet:");
 
   if (input1 === null || input1 === "") {
     alert("Ogiltig input: du måste skriva något.");
@@ -121,11 +122,13 @@ while (tal1 === null) {
     alert("Ogiltig input: det måste vara siffror.");
     continue;
   }
+
+  break;
 }
 
-// --- Andra talet ---
-while (tal2 === null) {
-  let input2 = prompt("Mata in andra talet:");
+// Andra talet
+while (true) {
+  input2 = prompt("Mata in andra talet:");
 
   if (input2 === null || input2 === "") {
     alert("Ogiltig input: du måste skriva något.");
@@ -138,6 +141,8 @@ while (tal2 === null) {
     alert("Ogiltig input: det måste vara siffror.");
     continue;
   }
+
+  break;
 }
 
 // Funktion som utför beräkningar
@@ -149,15 +154,11 @@ function calculate(tal1, tal2) {
   // Sträng
   let str = `Summan är ${summ}, produkten är ${produkt}, och om talet är lika (true) annars (false): ${same}`;
 
-  // Array2
+  // Array
   let array = [summ, produkt, same];
 
-  //  Objekt
-  let obj = {
-    summ: summ,
-    produkt: produkt,
-    same: same,
-  };
+  // Objekt
+  let obj = { summ, produkt, same };
 
   return { str, array, obj };
 }
@@ -171,4 +172,4 @@ console.log("Array:", resultat.array);
 console.log("Objekt:");
 console.table(resultat.obj);
 
-//bugg jag har är att jag inte kan avbryta
+//bugg jag har är att jag inte kan avbryta i promten
