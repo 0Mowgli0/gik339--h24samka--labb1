@@ -1,13 +1,13 @@
 /* Uppgift 2 - Variabler och scope */
 
-/* console.log("Före", a,b,c); */
+/* console.log("Före", a,b,c);  */
 {
   let a = 2;
   const b = 4;
   var c = 6;
   console.log("Inne", a, b, c);
 }
-/*console.log("Efter", a,b,c); */
+/*console.log("Efter", a, b, c);*/
 
 /*Reflektion uppgift 2:     
   let och const fungerar bara inuti blocket { ... }, medan var är tillgänglig både utanför/inuti blocket. var är alltså inte begränsad av klamrarna {} 
