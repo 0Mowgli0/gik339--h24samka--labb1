@@ -15,34 +15,12 @@
 
 /* Uppgift 3 - Jämförelser och specialvärden */
 // 1.
-if ("3" == 3) {
-  console.log("'3' == 3 är sant");
-} else {
-  console.log("'3' == 3 är falskt");
-}
 
-if ("3" === 3) {
-  console.log("'3' === 3 är sant");
-} else {
-  console.log("'3' === 3 är falskt");
-}
-if (NaN === NaN) {
-  console.log("NaN === NaN är sant");
-} else {
-  console.log("NaN === NaN är falskt");
-}
-
-if (null == undefined) {
-  console.log("null == undefined är sant");
-} else {
-  console.log("null == undefined är falskt");
-}
-
-if (null === undefined) {
-  console.log("null === undefined är sant");
-} else {
-  console.log("null === undefined är falskt");
-}
+console.log("3" == 3);
+console.log("3" === 3);
+console.log(NaN === NaN);
+console.log(undefined == null);
+console.log(undefined === null);
 
 // 2.
 console.log(undefined ? "Truthy" : "Falsy");
