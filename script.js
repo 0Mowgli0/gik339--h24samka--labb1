@@ -1,13 +1,13 @@
 /* Uppgift 2 - Variabler och scope */
 
-/* console.log("Före", a,b,c);  */
+//console.log("Före", a,b,c);  
 {
   let a = 2;
   const b = 4;
   var c = 6;
   console.log("Inne", a, b, c);
 }
-/*console.log("Efter", a, b, c);*/
+//console.log("Efter", a, b, c);
 
 /*Reflektion uppgift 2:     
   let och const fungerar bara inuti blocket { ... }, medan var är tillgänglig både utanför/inuti blocket. var är alltså inte begränsad av klamrarna {} 
@@ -18,7 +18,7 @@
 
 console.log("3" == 3);
 console.log("3" === 3);
-console.log(NaN === NaN);
+console.log(NaN === NaN); 
 console.log(undefined == null);
 console.log(undefined === null);
 
@@ -42,7 +42,7 @@ null används för att uttryckligen sätta ett medvetet tomt värde. Skillnaden 
 
 /* Uppgift 4 - Funktioner */
 
-//console.log(name)
+console.log(greet(name));
 
 function greet(name) {
   return "hej" + name;
@@ -74,80 +74,7 @@ Dock efter att ha läst på lite om arrowfunktion så kommer jag jobba mer med d
 
 4. Parameter = Namnet på det värde som en funktion förväntar sig när den definieras. 
    Argument = Det faktiska värdet som skickas till funktionen när den anropas.
-   Variabel = ett namn som lagrar data i koden.
+   Variabel = är namngiven data som tar plats i minnet.
 */
 
-// Extrauppgift (frivillig)
-//OBS! uppdatera gärna 1 gång efter att ha kört igenom, för att få rätt utskrift av array och objekt. Tydligen Vissa konsoler (särskilt Chrome) "tappar" strukturerad visning av objekt som loggats innan konsolen öppnades första gången
 
-let tal1;
-let tal2;
-let input1;
-let input2;
-
-// --- Första talet ---
-while (true) {
-  input1 = prompt("Mata in första talet:");
-
-  if (input1 === null || input1 === "") {
-    alert("Ogiltig input: du måste skriva något.");
-    continue;
-  }
-
-  tal1 = Number(input1);
-
-  if (isNaN(tal1)) {
-    alert("Ogiltig input: det måste vara siffror.");
-    continue;
-  }
-
-  break;
-}
-
-// Andra talet
-while (true) {
-  input2 = prompt("Mata in andra talet:");
-
-  if (input2 === null || input2 === "") {
-    alert("Ogiltig input: du måste skriva något.");
-    continue;
-  }
-
-  tal2 = Number(input2);
-
-  if (isNaN(tal2)) {
-    alert("Ogiltig input: det måste vara siffror.");
-    continue;
-  }
-
-  break;
-}
-
-// Funktion som utför beräkningar
-function calculate(tal1, tal2) {
-  let summ = tal1 + tal2;
-  let produkt = tal1 * tal2;
-  let same = tal1 === tal2;
-
-  // Sträng
-  let str = `Summan är ${summ}, produkten är ${produkt}, och om talet är lika (true) annars (false): ${same}`;
-
-  // Array
-  let array = [summ, produkt, same];
-
-  // Objekt
-  let obj = { summ, produkt, same };
-
-  return { str, array, obj };
-}
-
-// Kör funktionen
-let resultat = calculate(tal1, tal2);
-
-//  Skriv ut till konsolen
-console.log(resultat.str);
-console.log("Array:", resultat.array);
-console.log("Objekt:");
-console.table(resultat.obj);
-
-//bugg jag har är att jag inte kan avbryta i promten
