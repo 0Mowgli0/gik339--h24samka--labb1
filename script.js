@@ -42,7 +42,7 @@ null används för att uttryckligen sätta ett medvetet tomt värde. Skillnaden 
 
 /* Uppgift 4 - Funktioner */
 
-console.log(greet(name));
+//console.log(greet(name));
 
 function greet(name) {
   return "hej" + name;
